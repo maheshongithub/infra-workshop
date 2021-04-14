@@ -20,7 +20,6 @@ module "networking" {
 module "dns_and_certs" {
   source = "../../modules/dns_and_certs"
 
-  environment   = local.env
-  r53_zone      = local.root_domain
-  validate_cert = false
+  environment = local.env
+  r53_zone    = local.root_domain
 }

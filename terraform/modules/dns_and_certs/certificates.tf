@@ -6,7 +6,7 @@ resource "aws_acm_certificate" "certificate" {
 resource "aws_route53_record" "certificate_r53_record" {
   name    = aws_acm_certificate.certificate.domain_validation_options.*.resource_record_name[0]
   type    = aws_acm_certificate.certificate.domain_validation_options.*.resource_record_type[0]
-  zone_id = aws_route53_zone.dns_zone.zone_id
+  zone_id = var.create_zone ? aws_route53_zone.dns_zone[0].zone_id : data.aws_route53_zone.dns_zone[0].zone_id
   records = [
     aws_acm_certificate.certificate.domain_validation_options.*.resource_record_value[0]
   ]
