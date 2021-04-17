@@ -1,4 +1,5 @@
 # infra-workshop
+This repo containers infrastructure automation to setup the petclinic 3-tier application
 
 ## Bootstrap
 - Add the AWS access keys which has admin permissions on the AWS account
@@ -42,10 +43,12 @@ It is suggested to not allow the CI to create the IAM resources, as that would b
 - The `ec2-module` is being called from `terraform/nonlive/api`
 - The `terraform apply` is being done from Github Actions workflow
 - The latest custom AMI id being passed while creating the EC2 resources
-- This can be accessed at [https://frontend.devops-learnings.net/petclinic/](https://frontend.devops-learnings.net/petclinic/) (`internal` to VPC only)
+- This can be accessed at [https://frontend.devops-learnings.net/petclinic/](https://frontend.devops-learnings.net/petclinic/)
 
 
 ## Scope for improvements
 - Keeping the `api` internal to VPC. As the calls are being made externally, we need code changes in angular, so that the calls are made internally to api endpoint
 - A few workarounds like `sed` commands are used
 - API instance profile has `rds:*` permissions (though on that specific resource only). A fine-grained permissions can be given
+- Currently only a user access keys being used in CI/CD, but can be made to dynamically assume the role and run/apply the respective resources
+- I would suggest to have a distributed model of deployments (CI/CD setup within the respective applications repositories) in contrast to the current centralised model
