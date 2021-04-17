@@ -15,9 +15,9 @@ function main() {
   echo "Building AMI for petclinic-rest"
   packer validate petclinic-rest.json
   packer build petclinic-rest.json
-#  echo "Building AMI for petclinic-angular"
-#  packer validate petclinic-angular.json
-#  packer build petclinic-angular.json
+  echo "Building AMI for petclinic-angular"
+  packer validate petclinic-angular.json
+  packer build petclinic-angular.json
 }
 
 main
