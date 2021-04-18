@@ -13,27 +13,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.NONLIVE_AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.NONLIVE_AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.aws_region }}
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: "0.13.6"
-
-      - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Plan
-        run: terraform plan
-
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+#      - name: Configure AWS Credentials
+#        uses: aws-actions/configure-aws-credentials@v1
+#        with:
+#          aws-access-key-id: ${{ secrets.NONLIVE_AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.NONLIVE_AWS_SECRET_ACCESS_KEY }}
+#          aws-region: ${{ env.aws_region }}
+#
+#      - name: Setup Terraform
+#        uses: hashicorp/setup-terraform@v1
+#        with:
+#          terraform_version: "0.13.6"
+#
+#      - name: Terraform Init
+#        run: terraform init
+#
+#      - name: Terraform Plan
+#        run: terraform plan
+#
+#      - name: Terraform Apply
+#        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#        run: terraform apply -auto-approve
 
   api-nonlive:
     runs-on: ubuntu-latest
@@ -45,27 +45,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.NONLIVE_AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.NONLIVE_AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.aws_region }}
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: "0.13.6"
-
-      - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Plan
-        run: terraform plan
-
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+#      - name: Configure AWS Credentials
+#        uses: aws-actions/configure-aws-credentials@v1
+#        with:
+#          aws-access-key-id: ${{ secrets.NONLIVE_AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.NONLIVE_AWS_SECRET_ACCESS_KEY }}
+#          aws-region: ${{ env.aws_region }}
+#
+#      - name: Setup Terraform
+#        uses: hashicorp/setup-terraform@v1
+#        with:
+#          terraform_version: "0.13.6"
+#
+#      - name: Terraform Init
+#        run: terraform init
+#
+#      - name: Terraform Plan
+#        run: terraform plan
+#
+#      - name: Terraform Apply
+#        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#        run: terraform apply -auto-approve
 
   frontend-nonlive:
     runs-on: ubuntu-latest
@@ -77,24 +77,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.NONLIVE_AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.NONLIVE_AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.aws_region }}
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: "0.13.6"
-
-      - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Plan
-        run: terraform plan
-
-      - name: Terraform Apply
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+#      - name: Configure AWS Credentials
+#        uses: aws-actions/configure-aws-credentials@v1
+#        with:
+#          aws-access-key-id: ${{ secrets.NONLIVE_AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.NONLIVE_AWS_SECRET_ACCESS_KEY }}
+#          aws-region: ${{ env.aws_region }}
+#
+#      - name: Setup Terraform
+#        uses: hashicorp/setup-terraform@v1
+#        with:
+#          terraform_version: "0.13.6"
+#
+#      - name: Terraform Init
+#        run: terraform init
+#
+#      - name: Terraform Plan
+#        run: terraform plan
+#
+#      - name: Terraform Apply
+#        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#        run: terraform apply -auto-approve
