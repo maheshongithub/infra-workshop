@@ -1,6 +1,8 @@
 # infra-workshop
 This repo contains infrastructure automation to setup the petclinic 3-tier application
 
+![Alt text](./arch.jpg?raw=true "Architecture and Deployment Diagram")
+
 ## Bootstrap
 - Add the AWS access keys which has admin permissions on the AWS account
 - Run `./terraform_backend.sh` from *bootstrap* directory
