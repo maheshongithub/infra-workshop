@@ -1,5 +1,5 @@
 # infra-workshop
-This repo containers infrastructure automation to setup the petclinic 3-tier application
+This repo contains infrastructure automation to setup the petclinic 3-tier application
 
 ## Bootstrap
 - Add the AWS access keys which has admin permissions on the AWS account
